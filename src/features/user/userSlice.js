@@ -7,7 +7,7 @@ function getPosition() {
 }
 
 export const fetchAddress = createAsyncThunk(
-  'user/fetchAdress',
+  'user/fetchAddress',
   async function () {
     // 1) We get the user's geolocation position
     const positionObj = await getPosition();
@@ -26,13 +26,13 @@ export const fetchAddress = createAsyncThunk(
   },
 );
 
-const intialState = {
+const initialState = {
   username: '',
   status: 'idle',
 };
 const userSlice = createSlice({
   name: 'user',
-  intialState,
+  initialState,
   position: {},
   address: '',
   error: '',
